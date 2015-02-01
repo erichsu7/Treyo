@@ -1,5 +1,6 @@
 TrelloClone.Views.ListsForm = Backbone.View.extend({
   template: JST["lists/lists_form"],
+
   events: {
     "submit form": "createList"
   },
