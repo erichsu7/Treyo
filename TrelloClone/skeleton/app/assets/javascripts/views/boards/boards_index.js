@@ -7,9 +7,11 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
     var that = this;
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addIndexItem);
+    this.listenTo(this.collection, "remove", this.removeIndexItem);
     this.collection.each( function (board) {
       that.addIndexItem(board);
     });
+    this.addBoardsForm();
   },
 
   render: function () {
@@ -17,14 +19,29 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.attachSubviews();
 
-    var boardsForm = new TrelloClone.Views.BoardsForm({ collection: TrelloClone.boards });
-    this.$el.append(boardsForm.render().$el);
-
     return this;
+  },
+
+  addBoardsForm: function () {
+    var boardsForm = new TrelloClone.Views.BoardsForm({ collection: TrelloClone.boards });
+    this.addSubview(".boards-form", boardsForm);
   },
 
   addIndexItem: function (board) {
     var indexItemView = new TrelloClone.Views.BoardsIndexItem({ model: board });
     this.addSubview(".boards-list", indexItemView);
+  },
+
+  removeIndexItem: function (board) {
+    var that = this;
+    var indexItemView;
+    _(this.subviews()).each(function (subviews) {
+      indexItemView = _.findWhere(subviews, { model: board });
+      if (indexItemView) {
+        that.removeSubview(".boards-list", indexItemView);
+      };
+    });
   }
+
+
 });

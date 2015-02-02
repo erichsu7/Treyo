@@ -1,6 +1,8 @@
 TrelloClone.Views.BoardsForm = Backbone.View.extend({
+  tagName: "form",
+
   events: {
-    "submit form": "createBoard"
+    "submit": "createBoard"
   },
 
   template: JST["boards/boards_form"],
@@ -24,7 +26,6 @@ TrelloClone.Views.BoardsForm = Backbone.View.extend({
         that.collection.add(board);
         var url = "/api/boards/" + board.id;
         Backbone.history.navigate(url, { trigger: true });
-        debugger;
       }
     })
   }
