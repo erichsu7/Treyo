@@ -15,12 +15,11 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var that = this;
     var renderedContent = this.template({ board: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews();
-    this.sortableLists($("#sortable"));
-    
+    this.onRender();
+
     return this;
   },
 
@@ -54,5 +53,16 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
         TrelloClone.Utils.SaveOrder(ul, lists);
       }
     });
+  },
+
+  onRender: function () {
+    this.sortableLists(this.$(".lists-list"));
+    _(this.subviews()).each(function (subviews) {
+      _(subviews).each(function (subview) {
+        if (subview.onRender) {
+          subview.onRender();
+        }
+      })
+    })
   }
 });

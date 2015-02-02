@@ -15,3 +15,87 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+body {
+  background-color: #1987d1;
+}
+
+.boards-show {
+  margin-left: 20px;
+}
+
+.board-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.list-show, .lists-form {
+  position: relative;
+  list-style: none;
+  float: left;
+  vertical-align: top;
+  background-color: #ddd;
+  width: 250px;
+  margin-left: 0;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.list-title {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  position: relative;
+  top: -20px;
+}
+
+.delete {
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  color: #aaa;
+}
+
+.delete:hover {
+  color: #000;
+}
+
+.cards-list {
+  display: block;
+  position: relative;
+  top: -40px;
+  width: 100%;
+}
+
+.card-show {
+  background-color: #fff;
+  display: block;
+  position: relative;
+  left: -40px;
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 230px;
+  border-radius: 5px;
+}
+
+.cards-form {
+  position: relative;
+  margin-top: -35px;
+}
+
+.add-card-button, .save-list-button {
+  background-color: #52CC29;
+  color: #fff;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+input {
+  border-radius: 5px;
+}
