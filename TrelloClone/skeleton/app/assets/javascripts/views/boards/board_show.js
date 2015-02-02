@@ -20,7 +20,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.attachSubviews();
     this.sortableLists($("#sortable"));
-
+    
     return this;
   },
 
@@ -30,13 +30,14 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   },
 
   removeList: function (list) {
+    var that = this;
     var listView;
     _(this.subviews()).each(function (subviews) {
       listView = _.findWhere(subviews, { model: list });
-      debugger;
+      if (listView) {
+        that.removeSubview(".lists-list", listView);
+      };
     });
-    this.removeSubview(".lists-list", listView);
-    listView.remove();
   },
 
   addListsForm: function () {
