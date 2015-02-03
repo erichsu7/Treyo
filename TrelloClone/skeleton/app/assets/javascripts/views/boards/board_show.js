@@ -3,6 +3,12 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   template: JST["boards/board_show"],
   className: "boards-show",
 
+  events: {
+    "sortupdate .lists-list": "saveListOrder",
+    "sortstart .lists-list": "listDrag",
+    "sortstop .lists-list": "listDrop"
+  },
+
   initialize: function () {
     var that = this;
     this.listenTo(this.model, "sync change", this.render);
@@ -44,19 +50,17 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.addSubview(".lists-form", listsForm);
   },
 
-  sortableLists: function ($sortable) {
-    var that = this;
-    $sortable.sortable({
-      update: function (event, ui) {
-        var ul = $(this);
-        var lists = that.model.lists();
-        TrelloClone.Utils.SaveOrder(ul, lists);
-      }
-    });
+  saveListOrder: function (event, ui) {
+    console.log("save list order");
+    var $ul = ui.item.parent();
+    var lists = this.model.lists();
+    TrelloClone.Utils.SaveOrder($ul, lists);
   },
 
   onRender: function () {
-    this.sortableLists(this.$(".lists-list"));
+    $(".lists-list").sortable({
+      placeholder: "list-placeholder"
+    });
     _(this.subviews()).each(function (subviews) {
       _(subviews).each(function (subview) {
         if (subview.onRender) {
@@ -64,5 +68,17 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
         }
       })
     })
+    // this.$(".cards-list").sortable({
+    //   connectWith: ".cards-list"
+    // });
+  },
+
+  listDrag: function (event, ui) {
+    ui.item.addClass("dragged");
+    ui.placeholder.height(ui.helper.height());
+  },
+
+  listDrop: function (event, ui) {
+    ui.item.removeClass("dragged");
   }
 });

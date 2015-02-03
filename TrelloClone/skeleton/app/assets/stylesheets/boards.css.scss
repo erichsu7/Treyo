@@ -1,0 +1,39 @@
+.boards-index-item {
+  float: left;
+  position: relative;
+  list-style: none;
+  background-color: #115a8b ;
+  width: 250px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.boards-index-item > a {
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.board-index-title {
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  color: #fff;
+  left: 10px;
+  top: -10px;
+}
+
+.boards-show {
+  margin-left: 20px;
+}
+
+
+.board-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}

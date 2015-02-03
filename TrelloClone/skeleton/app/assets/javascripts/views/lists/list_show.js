@@ -11,7 +11,10 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click .delete": "destroyList"
+    "click .delete": "destroyList",
+    "sortupdate .cards-list": "saveCardOrder",
+    "sortstart .cards-list": "cardDrag",
+    "sortstop .cards-list": "cardDrop"
   },
 
   initialize: function (options) {
@@ -61,17 +64,27 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   onRender: function () {
-    this.sortableCards(this.$(".cards-list"));
+    $(".cards-list").sortable({
+      placeholder: "card-placeholder"
+    });
   },
 
-  sortableCards: function ($sortable) {
-    var that = this;
-    $sortable.sortable({
-      update: function (event, ui) {
-        var ul = $(this);
-        var cards = that.model.cards();
-        TrelloClone.Utils.SaveOrder(ul, cards);
-      }
-    });
+  saveCardOrder: function (event, ui) {
+    console.log("save card order");
+    var $ul = this.$(".cards-list");
+    var cards = this.model.cards();
+    TrelloClone.Utils.SaveOrder($ul, cards);
+    event.stopPropagation();
+  },
+
+  cardDrag: function (event, ui) {
+    ui.item.addClass("dragged");
+    ui.placeholder.height(ui.helper.height());
+    event.stopPropagation();
+  },
+
+  cardDrop: function (event, ui) {
+    ui.item.removeClass("dragged");
+    event.stopPropagation();
   }
 });
