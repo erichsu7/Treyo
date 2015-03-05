@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.ui.all
+ *= require_tree .
+ */
+
+@import "bootstrap";
+@import "font-awesome";
+
+body {
+  background-color: #1987d1;
+}
+
+
+.delete {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.card-show:hover > .delete, .list-show:hover > .delete {
+  display: block;
+  color: #000;
+}
+
+
+.add-card-button, .save-list-button {
+  background-color: #52CC29;
+  color: #fff;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+input {
+  border-radius: 5px;
+}
+
+.dragged {
+  transform: rotate(5deg);
+  box-shadow: 0 0 5px #000;
+}
+
+.list-placeholder {
+  background-color: #1570ae;
+}
+
+.card-placeholder {
+  background-color: #aaa;
+}

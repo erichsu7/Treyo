@@ -1,0 +1,22 @@
+.cards-list {
+  display: block;
+  position: relative;
+  top: -40px;
+  width: 100%;
+}
+
+.card-show, .card-placeholder {
+  background-color: #fff;
+  display: block;
+  position: relative;
+  left: -40px;
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 230px;
+  border-radius: 5px;
+}
+
+.cards-form {
+  position: relative;
+  margin-top: -35px;
+}
