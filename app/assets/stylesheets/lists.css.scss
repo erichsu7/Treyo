@@ -1,15 +1,44 @@
+.lists-list {
+  display: inline-block
+}
+
 .list-show, .lists-form, .list-placeholder {
   position: relative;
+  display: inline-block;
   list-style: none;
-  float: left;
   vertical-align: top;
   background-color: #e2e4e6;
-  width: 250px;
+  width: 260px;
   margin-left: 0;
   margin-right: 20px;
   padding: 10px;
   border-radius: 5px;
 }
+
+.lists-form-container {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 250px;
+}
+
+.lists-form-button {
+  display: block;
+  background-color: rgba(0,0,0,0.12);
+  padding: 10px 10px;
+  color: rgba(255,255,255,.7);
+  border-radius: 5px;
+  transition: all 100ms;
+
+}
+
+.lists-form-button:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.3);
+  transition: all 100ms;
+}
+
+
 
 .lists-form {
   display: none;
