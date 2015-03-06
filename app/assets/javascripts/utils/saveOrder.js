@@ -5,7 +5,8 @@ TrelloClone.Utils.SaveOrder = function ($ul, collection) {
       var $li = $(li);
       var model = collection.get($li.data("id"));
       model.set("ord", i);
-      model.save();
+      $li.attr("data-ord", i)
+      model.save([]);
       i++;
     });
   }
