@@ -1,0 +1,33 @@
+.add-card-button, .save-list-button {
+  background: linear-gradient(to bottom,#70b500 0,#64a200 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 5px 20px;
+  width: auto;
+  margin-top: 5px;
+  box-shadow: 0 1px 0 #4d4d4d;
+}
+
+.add-card-button:hover, .save-list-button:hover {
+  background: linear-gradient(to bottom,#64a200 0,#578c00 100%);
+}
+
+input {
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  padding: 5px;
+}
+
+.cancel-form-button {
+  font-size: 24px;
+  position: relative;
+  bottom: -3px;
+  margin-left: 5px;
+  color: #a6a6a6;
+}
+
+.cancel-form-button:hover {
+  cursor: pointer;
+  color: #686868;
+}
