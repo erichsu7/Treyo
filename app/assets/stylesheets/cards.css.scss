@@ -2,6 +2,7 @@
   display: block;
   position: relative;
   top: -40px;
+  left: -40px;
   width: 100%;
 }
 
@@ -9,14 +10,39 @@
   background-color: #fff;
   display: block;
   position: relative;
-  left: -40px;
   margin-bottom: 5px;
   padding: 5px;
-  width: 230px;
+  width: 240px;
   border-radius: 5px;
 }
 
+.card-placeholder {
+  background-color: #a6a6a6;
+}
+
+.cards-form-container {
+  width: 260px;
+  margin-left: -10px;
+  margin-bottom: -10px;
+  margin-top: -38px;
+}
+
 .cards-form {
+  display: none;
   position: relative;
-  margin-top: -35px;
+}
+
+.cards-form-button {
+  display: block;
+  // background-color: rgba(0,0,0,0.12);
+  padding: 5px 10px;
+  color: #8c8c8c;
+  transition: all 100ms;
+}
+
+.cards-form-button:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.12);
+  transition: all 100ms;
+  color: #4d4d4d;
 }
