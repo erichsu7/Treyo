@@ -3,12 +3,16 @@
   list-style: none;
   float: left;
   vertical-align: top;
-  background-color: #ddd;
+  background-color: #e2e4e6;
   width: 250px;
   margin-left: 0;
   margin-right: 20px;
   padding: 10px;
   border-radius: 5px;
+}
+
+.lists-form {
+  display: none;
 }
 
 .list-title {

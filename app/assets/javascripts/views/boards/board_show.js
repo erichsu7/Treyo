@@ -6,7 +6,8 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   events: {
     "sortupdate .lists-list": "saveListOrder",
     "sortstart .lists-list": "listDrag",
-    "sortstop .lists-list": "listDrop"
+    "sortstop .lists-list": "listDrop",
+    "click .lists-form-button": "showListsForm",
   },
 
   initialize: function () {
@@ -48,6 +49,11 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   addListsForm: function () {
     var listsForm = new TrelloClone.Views.ListsForm({ model: this.model, collection: this.model.lists() })
     this.addSubview(".lists-form", listsForm);
+  },
+
+  showListsForm: function () {
+    this.$(".lists-form").css("display", "block");
+    this.$("#list_title").focus();
   },
 
   saveListOrder: function (event, ui) {

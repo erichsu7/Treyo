@@ -3,7 +3,8 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
   tagName: "form",
 
   events: {
-    "submit": "createList"
+    "submit": "createList",
+    "blur input": "hide"
   },
 
   render: function () {
@@ -28,5 +29,9 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
       }
     })
 
+  },
+
+  hide: function () {
+    this.$el.parent().css("display", "none");
   }
 });
