@@ -1,0 +1,50 @@
+.splash-background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+}
+
+.splash-background-container > img {
+  position: relative;
+  display: block;
+  top: -200px;
+  height: auto;
+  width: 100%;
+  min-width: 1100px;
+}
+
+.splash-body-container {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.splash-header {
+  font-family: "Pacifico";
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.log-in-options {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.log-in-options .submit-button {
+  background-color: #0c87d0;
+  font-size: 16px;
+  color: #fff;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.12) inset;
+}
+
+.log-in-options .submit-button:hover {
+  background-color: #026aa7;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.3) inset;
+}
