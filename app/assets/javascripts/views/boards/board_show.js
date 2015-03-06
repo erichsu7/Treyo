@@ -58,7 +58,6 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   },
 
   saveListOrder: function (event, ui) {
-    console.log("save list order");
     var $ul = ui.item.parent();
     var lists = this.model.lists();
     TrelloClone.Utils.SaveOrder($ul, lists);
@@ -75,9 +74,6 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
         }
       })
     })
-    // this.$(".cards-list").sortable({
-    //   connectWith: ".cards-list"
-    // });
   },
 
   listDrag: function (event, ui) {

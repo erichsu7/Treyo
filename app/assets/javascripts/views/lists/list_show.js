@@ -86,15 +86,35 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
 
   onRender: function () {
     $(".cards-list").sortable({
-      placeholder: "card-placeholder"
+      placeholder: "card-placeholder",
+      connectWith: ".cards-list"
     });
   },
 
   saveCardOrder: function (event, ui) {
-    console.log("save card order");
+    var that = this;
+    var id = ui.item.data("id");
     var $ul = this.$(".cards-list");
+    var listId = $ul.data("list-id");
     var cards = this.model.cards();
-    TrelloClone.Utils.SaveOrder($ul, cards);
+    if (!cards.get(id)) {
+      var card = new TrelloClone.Models.Card();
+      card.set({
+        id: id,
+        list_id: listId
+      });
+      card.save([], {
+        success: function () {
+          that.stopListening(that.model.cards(), "add", that.addCard);
+          cards.add(card);
+          that.listenTo(that.model.cards(), "add", that.addCard);
+          TrelloClone.Utils.SaveOrder($ul, cards, card);
+        }
+      });
+    } else {
+      TrelloClone.Utils.SaveOrder($ul, cards);
+    }
+
     event.stopPropagation();
   },
 
