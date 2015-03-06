@@ -70,8 +70,6 @@ GEM
     execjs (2.2.1)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    font-awesome-sass (4.3.1)
-      sass (~> 3.2)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -91,6 +89,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
+    newrelic_rpm (3.9.9.275)
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.0)
@@ -162,10 +161,10 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   font-awesome-rails
-  font-awesome-sass
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
+  newrelic_rpm
   pg
   pry-rails
   rails (= 4.0.2)
