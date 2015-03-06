@@ -1,0 +1,15 @@
+<div class="splash-container">
+  <div class="log-in-container">
+    <h1 class="splash-header">Treyo</h1>
+    <ul class="log-in-options">
+      <li class="log-in-tour">
+        <form class="log-in-tour-form" action="/session" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input name="user[email]" type="hidden" value="eric">
+          <input name="user[password]" type="hidden" value="password">
+          <input type="submit" value="Take a tour" class="submit-button">
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
