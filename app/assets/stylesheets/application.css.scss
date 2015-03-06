@@ -22,25 +22,38 @@ body {
 }
 
 
-.delete {
+.edit, .delete {
   display: none;
   position: absolute;
-  right: 5px;
-  top: 0px;
+  right: 8px;
+  top: 8px;
   border: none;
   background-color: transparent;
-  font-weight: 700;
   font-size: 16px;
 }
 
-.card-show:hover > .delete, .list-show:hover > .delete {
+.delete {
   display: block;
-  color: #000;
+  color: #8c8c8c;
+}
+
+.delete:hover {
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+.card-show:hover > .edit {
+  display: block;
+  color: #8c8c8c;
+}
+
+.card-show:hover > .edit:hover {
+  color: #4d4d4d;
 }
 
 .dragged {
   transform: rotate(5deg);
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 10px 1px #aaa;
 }
 
 .list-placeholder {
@@ -51,6 +64,6 @@ body {
   background-color: #aaa;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline:0;
 }

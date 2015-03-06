@@ -26,6 +26,7 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
     list.save({}, {
       success: function () {
         that.collection.add(list);
+        that.render(); 
       }
     })
 
