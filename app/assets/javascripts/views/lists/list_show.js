@@ -14,7 +14,8 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     "click .delete": "destroyList",
     "sortupdate .cards-list": "saveCardOrder",
     "sortstart .cards-list": "cardDrag",
-    "sortstop .cards-list": "cardDrop"
+    "sortstop .cards-list": "cardDrop",
+    "click .cards-form-button": "showCardsForm"
   },
 
   initialize: function (options) {
@@ -61,6 +62,12 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   addCardsForm: function () {
     var cardsForm = new TrelloClone.Views.CardsForm({ model: this.model, collection: this.model.cards() });
     this.addSubview(".cards-form", cardsForm);
+  },
+
+  showCardsForm: function (event) {
+    $(event.target).toggle();
+    this.$(".cards-form").toggle();
+    this.$("#card_title").focus();
   },
 
   onRender: function () {

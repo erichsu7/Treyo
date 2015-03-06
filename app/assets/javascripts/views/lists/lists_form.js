@@ -4,7 +4,7 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
 
   events: {
     "submit": "createList",
-    "blur input": "hide"
+    "click .cancel-form-button": "hide"
   },
 
   render: function () {

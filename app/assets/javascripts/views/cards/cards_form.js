@@ -4,7 +4,8 @@ TrelloClone.Views.CardsForm = Backbone.View.extend({
   tagName: "form",
 
   events: {
-    "submit": "createCard"
+    "submit": "createCard",
+    "click .cancel-form-button": "hide"
   },
 
   render: function () {
@@ -27,5 +28,10 @@ TrelloClone.Views.CardsForm = Backbone.View.extend({
         that.collection.add(card);
       }
     })
+  },
+
+  hide: function (event) {
+    this.$el.parent().css("display", "none");
+    this.$el.parent().parent().find(".cards-form-button").toggle();
   }
 });
