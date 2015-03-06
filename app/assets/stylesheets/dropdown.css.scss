@@ -1,0 +1,28 @@
+.delete-dropdown-container {
+  position: absolute;
+  left: 230px;
+  top: 30px;
+  width: 200px;
+  z-index: 1;
+}
+
+.delete-dropdown {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);
+  padding: 5px 0px;
+}
+
+.delete-dropdown-text {
+  width: 100%;
+  font-weight: 700;
+  padding: 5px 10px;;
+}
+
+.delete-dropdown-text:hover {
+  cursor: pointer;
+  background-color: #298fca;
+  color: #fff;
+}
