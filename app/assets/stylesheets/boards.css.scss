@@ -1,8 +1,13 @@
-.boards-index-item {
-  float: left;
+.boards-list {
+  display: inline-block;
+}
+
+.boards-index-item,
+  .boards-form-button {
   position: relative;
   list-style: none;
-  background-color: #e2e4e6;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.12);
   width: 250px;
   height: 100px;
   margin-right: 10px;
@@ -36,4 +41,25 @@
   font-size: 18px;
   font-weight: 700;
   color: #fff;
+}
+
+.boards-form-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.boards-form-button {
+  position: relative;
+  background-color: #ddd;
+  text-align: center;
+}
+
+.boards-form-button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 700;
+  width: 200px;
 }
