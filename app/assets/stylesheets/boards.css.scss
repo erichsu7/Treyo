@@ -8,7 +8,7 @@
   list-style: none;
   display: inline-block;
   background-color: rgba(0,0,0,0.12);
-  width: 250px;
+  width: 260px;
   height: 100px;
   margin-right: 10px;
   border-radius: 5px;
@@ -41,6 +41,11 @@
   font-size: 18px;
   font-weight: 700;
   color: #fff;
+}
+
+.boards-form {
+  display: none;
+  width: 260px;
 }
 
 .boards-form-container {

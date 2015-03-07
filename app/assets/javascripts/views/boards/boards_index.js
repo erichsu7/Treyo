@@ -3,6 +3,10 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   template: JST["boards/boards_index"],
   className: "boards-index",
 
+  events: {
+    "click .boards-form-button": "showBoardsForm"
+  },
+
   initialize: function () {
     var that = this;
     this.listenTo(this.collection, "sync", this.render);
@@ -41,6 +45,12 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
         that.removeSubview(".boards-list", indexItemView);
       };
     });
+  },
+
+  showBoardsForm: function (event) {
+    this.$(".boards-form-button").toggle();
+    this.$(".boards-form").toggle();
+    this.$("#board_title").focus();
   }
 
 
