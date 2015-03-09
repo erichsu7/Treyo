@@ -105,9 +105,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       });
       card.save([], {
         success: function () {
-          that.stopListening(that.model.cards(), "add", that.addCard);
-          cards.add(card);
-          that.listenTo(that.model.cards(), "add", that.addCard);
+          cards.add(card, { silent: true });
           TrelloClone.Utils.SaveOrder($ul, cards, card);
         }
       });
