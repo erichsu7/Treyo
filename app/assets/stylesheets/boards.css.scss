@@ -3,14 +3,22 @@
 }
 
 .boards-index-item,
-  .boards-form-button {
+  .boards-form-button,
+  .boards-form {
   position: relative;
   list-style: none;
   display: inline-block;
+  vertical-align: top;
   background-color: rgba(0,0,0,0.12);
   width: 260px;
   height: 100px;
   margin-right: 10px;
+  border-radius: 5px;
+}
+
+.boards-form {
+  background-color: #e2e4e6;
+  padding: 10px;
   border-radius: 5px;
 }
 
