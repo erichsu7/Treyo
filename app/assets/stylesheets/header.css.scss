@@ -15,3 +15,34 @@
 .navbar-default .navbar-brand:hover {
   color: #fff;
 }
+
+#boards-button {
+  color: white;
+  background-color: #428bca;
+  border: 1px solid #357ebd;
+  padding: 6px 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#boards-button:hover {
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+
+.btn.btn-primary.navbar-btn {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.btn.btn-primary.navbar-btn:focus {
+  outline: 0;
+}
+
+.container {
+  width: 100%;
+}
