@@ -42,6 +42,6 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
 
   hide: function () {
     this.$el.parent().css("display", "none");
-    $(".lists-form-button").toggle();
+    this.$el.parent().siblings().toggle();
   }
 });

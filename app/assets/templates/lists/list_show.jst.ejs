@@ -1,7 +1,9 @@
-<h2 class="list-title"><%= list.escape("title") %></h2>
-<div class="list-show-lists-form"></div>
-<i class="fa fa-caret-square-o-down delete"></i>
-<div class="delete-dropdown-container"></div>
+<div class="list-title-container">
+  <i class="fa fa-caret-square-o-down delete"></i>
+  <div class="delete-dropdown-container"></div>
+  <h2 class="list-title"><%= list.escape("title") %></h2>
+  <div class="list-show-lists-form"></div>
+</div>
 
 <ul class="cards-list" data-list-id="<%= list.escape("id") %>"></ul>
 <div class="cards-form-container">

@@ -21,6 +21,10 @@
   background-color: rgba(0,0,0,0.3)
 }
 
+.list-title-container {
+  margin-bottom: 30px;
+}
+
 .lists-form-container {
   vertical-align: top;
   position: relative;
@@ -56,7 +60,7 @@
 }
 
 .list-show-lists-form {
-  top: -20px;
+  display: none;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
