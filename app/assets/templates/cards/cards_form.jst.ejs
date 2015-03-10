@@ -1,4 +1,6 @@
-<textarea name="card[title]" id="card_title" placeholder="Add a card..."></textarea>
+<% var text = model ? model.escape("title") : ""; %>
+<textarea name="card[title]" id="card_title" placeholder="Add a card..."><%= text %></textarea>
 
-<input type="submit" value="Add" class="submit-button">
+<% var button_text = model ? "Save" : "Add"; %>
+<input type="submit" value="<%= button_text %>" class="submit-button">
 <i class="fa fa-times cancel-form-button"></i>

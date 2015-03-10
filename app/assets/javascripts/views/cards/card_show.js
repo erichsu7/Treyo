@@ -13,6 +13,10 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
     "click .edit": "showCardsForm"
   },
 
+  initialize: function () {
+    this.listenTo(this.model, "change", this.render);
+  },
+
   render: function () {
     var renderedContent = this.template({ card: this.model });
     this.$el.html(renderedContent);
@@ -32,7 +36,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   },
 
   addCardsForm: function () {
-    this.cardsForm = new TrelloClone.Views.CardsForm({});
+    this.cardsForm = new TrelloClone.Views.CardsForm({ model: this.model });
     var $div = $("<div class=\"card-show-cards-form\">");
     this.$el.append($div);
     this.addSubview(".card-show-cards-form", this.cardsForm);
