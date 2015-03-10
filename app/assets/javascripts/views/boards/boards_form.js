@@ -2,7 +2,8 @@ TrelloClone.Views.BoardsForm = Backbone.View.extend({
   tagName: "form",
 
   events: {
-    "submit": "createBoard"
+    "submit": "createBoard",
+    "click .cancel-form-button": "hide"
   },
 
   template: JST["boards/boards_form"],
@@ -28,5 +29,10 @@ TrelloClone.Views.BoardsForm = Backbone.View.extend({
         Backbone.history.navigate(url, { trigger: true });
       }
     })
+  },
+
+  hide: function () {
+    this.$el.parent().css("display", "none");
+    $(".boards-form-button").toggle();
   }
 });
