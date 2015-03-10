@@ -81,6 +81,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
 
   showListsForm: function (event) {
     $(event.target).toggle();
+    $(event.target).siblings().filter("i").toggle();
     this.$(".list-show-lists-form").toggle();
     this.$("#list_title").focus();
   },
