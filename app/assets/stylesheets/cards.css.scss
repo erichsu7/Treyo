@@ -6,7 +6,8 @@
   min-height: 20px;
 }
 
-.card-show, .card-placeholder {
+.card-show,
+  .card-placeholder {
   background-color: #fff;
   display: block;
   position: relative;
@@ -39,6 +40,13 @@
   width: 240px;
   margin-left: 10px;
   margin-bottom: 10px;
+}
+
+.card-show-cards-form {
+  display: none;
+  margin: -5px;
+  background-color: #e2e4e6;
+  border: none;
 }
 
 .cards-form-button {
