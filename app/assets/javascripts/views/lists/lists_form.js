@@ -25,6 +25,7 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
     var $currentTarget = $(event.currentTarget);
     var params = $currentTarget.serializeJSON();
     if (!this.model) {
+      params.list.ord = this.collection.length + 1;
       params.list.board_id = this.board.id;
       var list = new TrelloClone.Models.List();
     } else {
@@ -34,8 +35,8 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
     list.save(params.list, {
       success: function () {
         that.collection && that.collection.add(list);
-        this.model = null;
-        this.render();
+        that.model = null;
+        that.render();
       }
     });
     that.hide();
