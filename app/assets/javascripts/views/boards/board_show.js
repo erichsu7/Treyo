@@ -47,7 +47,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   },
 
   addListsForm: function () {
-    var listsForm = new TrelloClone.Views.ListsForm({ model: this.model, collection: this.model.lists() })
+    var listsForm = new TrelloClone.Views.ListsForm({ board: this.model, collection: this.model.lists() })
     this.addSubview(".lists-form", listsForm);
   },
 

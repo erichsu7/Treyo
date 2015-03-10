@@ -3,30 +3,38 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
   tagName: "form",
 
   events: {
-    "submit": "createList",
+    "submit": "saveList",
     "click .cancel-form-button": "hide"
   },
 
+  initialize: function (options) {
+    this.board = options.board;
+  },
+
   render: function () {
-    var renderedContent = this.template();
+    var renderedContent = this.template({ model: this.model });
     this.$el.html(renderedContent);
 
     return this;
   },
 
-  createList: function (event) {
+  saveList: function (event) {
     event.preventDefault();
 
     var that = this;
     var $currentTarget = $(event.currentTarget);
     var params = $currentTarget.serializeJSON();
-    params.list.board_id = this.model.id;
-    var list = new TrelloClone.Models.List(params.list);
+    if (!this.model) {
+      params.list.board_id = this.board.id;
+      var list = new TrelloClone.Models.List();
+    } else {
+      var list = this.model;
+    }
 
-    list.save({}, {
+    list.save(params.list, {
       success: function () {
-        that.collection.add(list);
-        that.render(); 
+        that.collection && that.collection.add(list);
+        that.render();
       }
     })
 

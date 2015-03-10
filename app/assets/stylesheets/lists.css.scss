@@ -2,7 +2,7 @@
   display: inline-block
 }
 
-.list-show, 
+.list-show,
   .lists-form,
   .list-placeholder {
   position: relative;
@@ -53,4 +53,10 @@
   display: block;
   position: relative;
   top: -20px;
+}
+
+.list-show-lists-form {
+  top: -20px;
+  position: relative;
+  margin-bottom: 30px;
 }
