@@ -1,5 +1,5 @@
 .lists-list {
-  display: inline-block
+  display: inline-block;
 }
 
 .list-show,
@@ -15,6 +15,7 @@
   margin-right: 20px;
   padding: 10px;
   border-radius: 5px;
+  white-space: normal;
 }
 
 .list-placeholder {
