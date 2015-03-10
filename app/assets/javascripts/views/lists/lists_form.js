@@ -37,7 +37,6 @@ TrelloClone.Views.ListsForm = Backbone.View.extend({
         that.render();
       }
     })
-
   },
 
   hide: function () {

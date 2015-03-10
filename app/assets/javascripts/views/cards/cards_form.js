@@ -4,8 +4,12 @@ TrelloClone.Views.CardsForm = Backbone.View.extend({
   tagName: "form",
 
   events: {
-    "submit": "createCard",
+    "submit": "saveCard",
     "click .cancel-form-button": "hide"
+  },
+
+  initialize: function (options) {
+    this.list = options.list;
   },
 
   render: function () {
@@ -15,17 +19,23 @@ TrelloClone.Views.CardsForm = Backbone.View.extend({
     return this;
   },
 
-  createCard: function (event) {
+  saveCard: function (event) {
     event.preventDefault();
 
     var that = this;
     var $currentTarget = $(event.currentTarget);
     var params = $currentTarget.serializeJSON();
-    params.card.list_id = this.model.id;
-    var card = new TrelloClone.Models.Card(params.card);
-    card.save({}, {
+
+    if (!this.model) {
+      params.card.list_id = this.list.id;
+      var card = new TrelloClone.Models.Card();
+    } else {
+      var card = this.model;
+    }
+
+    card.save(params.card, {
       success: function () {
-        that.collection.add(card);
+        that.collection && that.collection.add(card);
         that.render();
       }
     })

@@ -10,7 +10,7 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
   },
 
   events: {
-    "click .delete": "destroyCard"
+    "click .edit": "showCardsForm"
   },
 
   render: function () {
