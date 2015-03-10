@@ -36,3 +36,19 @@ textarea {
   cursor: pointer;
   color: #686868;
 }
+
+.delete-card-button {
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 6px 20px;
+  background: linear-gradient(to bottom,#da071c 0, #c70719 100%);
+  color: #fff;
+  box-shadow: 0 1px 0 #4d4d4d;
+  margin-left: 52px;
+}
+
+.delete-card-button:hover {
+  background: linear-gradient(to bottom,#c70719 0,#b40617 100%);
+  color: #fff;
+  text-decoration: none;
+}

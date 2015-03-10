@@ -10,7 +10,8 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click .edit": "showCardsForm"
+    "click .edit": "showCardsForm",
+    "click .delete-card-button": "destroyCard"
   },
 
   initialize: function () {
@@ -42,7 +43,8 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
     this.addSubview(".card-show-cards-form", this.cardsForm);
   },
 
-  destroyCard: function () {
+  destroyCard: function (event) {
+    event.preventDefault();
     this.model.destroy();
   }
 });
