@@ -21,7 +21,7 @@ TrelloClone.Views.BoardsIndexItem = Backbone.CompositeView.extend({
       this.$(".delete").removeClass("fa fa-caret-square-o-up")
       this.$(".delete").addClass("fa fa-caret-square-o-down");
     } else {
-      this.dropdown = new TrelloClone.Views.ListDropdown({ model: this.model });
+      this.dropdown = new TrelloClone.Views.BoardDropdown({ model: this.model });
       this.addSubview(".delete-dropdown-container", this.dropdown);
       this.$(".delete").removeClass("fa fa-caret-square-o-down");
       this.$(".delete").addClass("fa fa-caret-square-o-up")
