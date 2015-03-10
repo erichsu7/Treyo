@@ -36,9 +36,10 @@ TrelloClone.Views.CardsForm = Backbone.View.extend({
     card.save(params.card, {
       success: function () {
         that.collection && that.collection.add(card);
-        that.render();
+        this.model = null;
       }
-    })
+    });
+    that.hide();
   },
 
   hide: function (event) {

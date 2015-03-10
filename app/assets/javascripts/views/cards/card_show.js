@@ -18,6 +18,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    this.cardsForm = null;
     var renderedContent = this.template({ card: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews();
@@ -29,7 +30,6 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
     if (!this.cardsForm) {
       this.addCardsForm();
     }
-
     $(event.target).parent().toggle();
     this.$(".card-show-cards-form").toggle();
     this.$("#card_title").focus();
