@@ -37,20 +37,25 @@
   width: 300px;
 }
 
-.log-in-options .submit-button {
+.log-in-tour:first-child {
+  margin-top: -10px;
+}
+
+.log-in-options .splash-button {
   background-color: #0c87d0;
   font-size: 16px;
+  font-weight: 700;
   color: #fff;
   box-shadow: 0 0 5px 1px rgba(0,0,0,0.12) inset;
 }
 
-.log-in-options .submit-button:hover {
+.log-in-options .splash-button:hover {
   text-decoration: none;
   background-color: #026aa7;
   box-shadow: 0 0 5px 1px rgba(0,0,0,0.3) inset;
 }
 
-a.submit-button {
+.splash-button {
   display: block;
   width: 100%;
   padding: 5px 0;
