@@ -33,6 +33,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
     }
     $(event.target).parent().toggle();
     this.$(".card-show-cards-form").toggle();
+    this.$el.addClass("hide-border-bottom");
     this.$("#card_title").focus();
   },
 

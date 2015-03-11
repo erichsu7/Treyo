@@ -18,6 +18,10 @@
   border-bottom: 1px solid #ccc;
 }
 
+.card-show.hide-border-bottom {
+  border-bottom: none;
+}
+
 .card-show:hover {
   cursor: pointer;
   background-color: #f5f5f5;

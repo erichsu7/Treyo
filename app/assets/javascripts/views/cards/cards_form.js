@@ -46,5 +46,6 @@ TrelloClone.Views.CardsForm = Backbone.View.extend({
   hide: function (event) {
     this.$el.parent().css("display", "none");
     this.$el.parent().siblings().toggle();
+    this.$el.parent().parent().removeClass("hide-border-bottom");
   }
 });
