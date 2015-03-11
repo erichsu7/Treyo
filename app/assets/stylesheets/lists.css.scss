@@ -18,6 +18,13 @@
   white-space: normal;
 }
 
+.list-show:hover {
+  cursor: -webkit-grab;
+}
+.list-show:active {
+  cursor: -webkit-grabbing;
+}
+
 .list-placeholder {
   background-color: rgba(0,0,0,0.3)
 }
