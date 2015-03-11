@@ -1,5 +1,6 @@
 .boards-index {
   margin-left: 20px;
+  white-space: nowrap;
 }
 
 .boards-list {
@@ -18,6 +19,7 @@
   height: 100px;
   margin-right: 10px;
   border-radius: 5px;
+  white-space: normal;
 }
 
 .boards-form {
