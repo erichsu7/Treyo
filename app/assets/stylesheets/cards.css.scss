@@ -23,8 +23,12 @@
 }
 
 .card-show:hover {
-  cursor: pointer;
+  cursor: -webkit-grab;
   background-color: #f5f5f5;
+}
+
+.card-show:active {
+  cursor: -webkit-grabbing;
 }
 
 .card-placeholder {

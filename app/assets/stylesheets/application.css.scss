@@ -32,6 +32,7 @@ ul {
 }
 
 .edit, .delete {
+  cursor: pointer;
   display: none;
   position: absolute;
   border: none;
