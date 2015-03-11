@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 5, allow_nil: true }
   validates :email, uniqueness: true
 
-  has_many :boards
-  has_many :card_assignments
-  has_many :board_memberships
+  has_many :boards, dependent: :destroy
+  has_many :card_assignments, dependent: :destroy
+  has_many :board_memberships, dependent: :destroy
 
   attr_reader :password
   after_initialize :ensure_session_token
