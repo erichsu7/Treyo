@@ -1,27 +1,19 @@
-# Delete user if it already exists
 user = User.find_by(email: 'eric')
-user.destroy if user
+board = Board.find_by(title: "Click here to get started!") || user.boards.create!({title: "Click here to get started!"})
+user.boards.where("id != ?", board.id).destroy_all
 
-Board.create!([
-  {title: "Click here to get started!", user_id: 3}
-])
-Card.create!([
-  {title: "The intuitive, flexible interface lets you add, sort, and delete tasks on the fly", list_id: 37, description: nil, ord: 0.0},
-  {title: "Treyo is a task organization app based on Trello", list_id: 37, description: nil, ord: 0.0},
-  {title: "Each list consists of cards", list_id: 17, description: nil, ord: 1.0},
-  {title: "Cards can be dragged and dropped across lists", list_id: 17, description: nil, ord: 2.0},
-  {title: "Add a list by clicking the button over to the right", list_id: 16, description: nil, ord: 2.0},
-  {title: "You can edit a card's title or delete it altogether by clicking the pencil", list_id: 17, description: nil, ord: 3.0},
-  {title: "Sort lists by dragging and dropping", list_id: 16, description: nil, ord: 3.0},
-  {title: "Try adding a card below!", list_id: 17, description: nil, ord: 4.0},
-  {title: "Double click a list's title to edit it", list_id: 16, description: nil, ord: 4.0},
-  {title: "To delete a list, click the dropdown button in the upper right corner", list_id: 16, description: nil, ord: 5.0}
-])
-List.create!([
-  {title: "Welcome to Treyo!", board_id: 8, ord: 1.0},
-  {title: "This is a list", board_id: 8, ord: 2.0},
-  {title: "Cards", board_id: 8, ord: 3.0}
-])
-User.create!([
-  {email: "eric", password_digest: "$2a$10$1.B7XhRhJ0L9N64KgMPJ7eo/R1.f2nHCmluel8KnN5PKlMRsuLIO2", session_token: "aA4Hq3QW0rZBw346BtDYWQ"}
-])
+board.lists.destroy_all
+list_welcome = board.lists.create!({title: "Welcome to Treyo!", ord: 1.0})
+list_list = board.lists.create!({title: "This is a list", ord: 2.0})
+list_cards = board.lists.create!({title: "Cards", ord: 3.0})
+
+list_welcome.cards.create!({title: "Treyo is a task organization app based on Trello", description: nil, ord: 1.0})
+list_welcome.cards.create!({title: "The intuitive, flexible interface lets you add, sort, and delete tasks on the fly", description: nil, ord: 2.0})
+list_list.cards.create!({title: "Sort lists by dragging and dropping", description: nil, ord: 1.0})
+list_list.cards.create!({title: "Double click a list's title to edit it", description: nil, ord: 2.0})
+list_list.cards.create!({title: "Add a list by clicking the button over to the right", description: nil, ord: 3.0})
+list_list.cards.create!({title: "To delete a list, click the dropdown button in the upper right corner", description: nil, ord: 4.0})
+list_cards.cards.create!({title: "Each list consists of cards", description: nil, ord: 1.0})
+list_cards.cards.create!({title: "Cards can be dragged and dropped across lists", description: nil, ord: 2.0})
+list_cards.cards.create!({title: "You can edit a card's title or delete it altogether by clicking the pencil", description: nil, ord: 3.0})
+list_cards.cards.create!({title: "Try adding a card below!", description: nil, ord: 4.0})
