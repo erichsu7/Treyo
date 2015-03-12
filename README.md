@@ -12,7 +12,7 @@ Treyo is a one-page **Backbone** app consuming a **Rails** API. The ubiquitous d
 
 ### Back-end
 
-The Rails back-end handles user authentication and the CRUD process for boards, lists, and cards through a RESTful API.
+A RESTful Rails API handles user authentication and the CRUD process for boards, lists, and cards.
 
 ### Front-end
 
@@ -20,7 +20,7 @@ The entire app is displayed on one page by incorporating composite views into Ba
 
 ### Object Oriented Design
 
-The front-end represents Rails associations between boards, lists, and cards by overwriting Backbone's `Model#parse` function to assign the JSON response's collection (represented as an array) to the Backbone model.
+The front-end preserves Rails associations between boards, lists, and cards by overwriting Backbone's `Model#parse` function to assign the JSON response's collection (represented as an array) to the Backbone model.
 
 ### Drag-and-drop
 
